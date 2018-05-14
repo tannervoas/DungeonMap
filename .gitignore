@@ -13,3 +13,6 @@ pom.xml.asc
 .nrepl-port
 .cpcache/
 DungeonMap.VC.db
+x64/
+DungeonMap/x64/
+DungeonMap.VC.VC.opendb
