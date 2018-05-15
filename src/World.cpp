@@ -9,7 +9,7 @@
 #include <omp.h>
 #include "settings.h"
 #include "World.h"
-#include "Player.h"
+#include "Camera.h"
 
 using namespace std;
 
@@ -58,7 +58,7 @@ World::World(char * file)
 				block_count += 1;
 			}
 		}
-		else if (line[0] == '1') { //Player | 1 x y z - Player
+		else if (line[0] == '1') { //Camera | 1 x y z - Camera
 			sscanf(line, "1 %d %d %d", &startx, &starty, &startz);
 		}
 		else if (line[0] == '2') { //Velocity | 2 x y z - Velocity
@@ -190,8 +190,8 @@ float * World::BuildVertices(void)
 			numTris[1] = b.getVerticeCount();
 			total_elements += elements[1];
 		}
-		//Player Sphere info
-		Player p = Player();
+		//Camera Sphere info
+		Camera p = Camera();
 		tmp_store[2] = p.getModelData();
 		elements[2] = p.getElements();
 		numTris[2] = p.getVerticeCount();

@@ -2,16 +2,16 @@
 * Author: Tanner Voas
 * Notes: Represents our camera and players position.
 */
-#ifndef PLAYER_INCLUDED
-#define PLAYER_INCLUDED
+#ifndef CAMERA_INCLUDED
+#define CAMERA_INCLUDED
 
 #include <stdio.h>
 #include "World.h"
 
 /**
-* Player
+* Camera
 **/
-struct Player //Our camera and rolling ball
+struct Camera //Our camera and rolling ball
 {
 	//Attributes
 	glm::vec3 position, look, up, point;
@@ -39,8 +39,8 @@ struct Player //Our camera and rolling ball
 	glm::mat4 model;
 	glm::vec3 rotor;
 	//Methods
-	Player(void); //Default constructor
-	Player(int x_, int y_, int z_, int width_, int height_, World my_world_);
+	Camera(void); //Default constructor
+	Camera(int x_, int y_, int z_, int width_, int height_, World my_world_);
 	glm::mat4 getViewMatrix(float sprint);
 	glm::mat4 getNoTranViewMatrix(float time);
 	glm::mat4 getModelMatrix(void); //Returns blocks Model Matrix

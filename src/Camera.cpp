@@ -1,6 +1,6 @@
 /*
 * Author: Tanner Voas
-* Notes: Represents our camera and players position.
+* Notes: Represents our camera and Camera position.
 */
 #include <cstdio>
 #include <cstdlib>
@@ -10,7 +10,7 @@
 #include "glm/glm.hpp"
 #include "glm/gtc/matrix_transform.hpp"
 #include "glm/gtc/type_ptr.hpp"
-#include "Player.h"
+#include "Camera.h"
 #include "World.h"
 #include "settings.h"
 
@@ -22,12 +22,12 @@ float magnitude(glm::vec3 v) {
 	return sqrt(pow(v.x, 2) + pow(v.y, 2) + pow(v.z, 2));
 }
 
-Player::Player(void)
+Camera::Camera(void)
 {
 	elements = 0;
 }
 
-Player::Player(int x_, int y_, int z_, int width_, int height_, World my_world_)
+Camera::Camera(int x_, int y_, int z_, int width_, int height_, World my_world_)
 {
 	locky = y_;
 	position = glm::vec3(x_,y_,z_);
@@ -66,7 +66,7 @@ Player::Player(int x_, int y_, int z_, int width_, int height_, World my_world_)
 	right = glm::normalize(glm::cross(xzproj, up));
 }
 
-glm::mat4 Player::getViewMatrix(float sprint)
+glm::mat4 Camera::getViewMatrix(float sprint)
 {
 	float vmag = sqrt(pow(velocityVec.x, 2) + pow(velocityVec.y, 2) + pow(velocityVec.z, 2));
 	//printf("SPRINT: %f\n", sprint);
@@ -100,7 +100,7 @@ glm::mat4 Player::getViewMatrix(float sprint)
 	return view;
 }
 
-glm::mat4 Player::getNoTranViewMatrix(float time)
+glm::mat4 Camera::getNoTranViewMatrix(float time)
 {
 	return glm::lookAt(
 		glm::vec3(),  //Cam Position
@@ -108,7 +108,7 @@ glm::mat4 Player::getNoTranViewMatrix(float time)
 		up); //Up;
 }
 
-glm::mat4 Player::getModelMatrix(void)
+glm::mat4 Camera::getModelMatrix(void)
 {
 	model = glm::mat4();
 	float increase = pow(RADIUS, (1.f / 3.f));
@@ -118,7 +118,7 @@ glm::mat4 Player::getModelMatrix(void)
 	return model;
 }
 
-float * Player::getModelData()
+float * Camera::getModelData()
 {
 	if (elements == 0) {
 		std::ifstream modelFile;
@@ -133,17 +133,17 @@ float * Player::getModelData()
 	return modelData;
 }
 
-int Player::getElements(void)
+int Camera::getElements(void)
 {
 	return elements;
 }
 
-int Player::getVerticeCount(void)
+int Camera::getVerticeCount(void)
 {
 	return numTris;
 }
 
-void Player::Rotate(float dx, float dy) {
+void Camera::Rotate(float dx, float dy) {
 	horiz += -1 * turn_speed * float(2 * dx / width - 1);
 	vert += -1 * turn_speed * float(2 * dy / height - 1);
 	if (vert < downLim) {
@@ -161,7 +161,7 @@ void Player::Rotate(float dx, float dy) {
 	right = glm::normalize(glm::cross(xzproj, up));
 }
 
-void Player::stepForward(float dir, float time)
+void Camera::stepForward(float dir, float time)
 {
 	if (active) {
 		velocityVec = velocityVec + xzproj * GLOBAL_TIME_STEP * move_speed * dir;
@@ -173,7 +173,7 @@ void Player::stepForward(float dir, float time)
 	}
 }
 
-void Player::stepRight(int dir, float time)
+void Camera::stepRight(int dir, float time)
 {
 	if (active) {
 		velocityVec = velocityVec + right * GLOBAL_TIME_STEP * move_speed * (float)dir;
@@ -185,7 +185,7 @@ void Player::stepRight(int dir, float time)
 	}
 }
 
-void Player::stepUp(int dir, float time)
+void Camera::stepUp(int dir, float time)
 {
 	
 	if (active) {
@@ -198,32 +198,32 @@ void Player::stepUp(int dir, float time)
 	}
 }
 
-void Player::enforeRules(void) {
+void Camera::enforeRules(void) {
 	if (!FLIGHT) {
 		look.y -= position.y;
 		position.y = 0.0f;
 	}
 }
 
-void Player::enforeRules(glm::vec3 * pos, glm::vec3 * loo) {
+void Camera::enforeRules(glm::vec3 * pos, glm::vec3 * loo) {
 	if (!FLIGHT) {
 		loo->y = loo->y - pos->y + locky;
 		pos->y = locky;
 	}
 }
 
-char Player::isValid(glm::vec3 pos)
+char Camera::isValid(glm::vec3 pos)
 {
 	return my_world.enforceRules(pos);
 }
 
-glm::vec3 Player::isValid(glm::vec3 new_pos, float r, glm::vec3 old_pos)
+glm::vec3 Camera::isValid(glm::vec3 new_pos, float r, glm::vec3 old_pos)
 {
 
 	return my_world.verified(new_pos, r, old_pos, &velocityVec);
 }
 
-void Player::Jump(void)
+void Camera::Jump(void)
 {
 	if (jumps < max_jumps) {
 		jumps += 1;
@@ -231,7 +231,7 @@ void Player::Jump(void)
 	}
 }
 
-void Player::setForces(glm::vec3 vv, glm::vec3 gv)
+void Camera::setForces(glm::vec3 vv, glm::vec3 gv)
 {
 	velocityVec = vv;
 	gravityVec = gv;
