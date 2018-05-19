@@ -1,53 +1,11 @@
-﻿  MainDriver.cpp
-c:\git repos\dungeonmap\src\settings.h(15): warning C4005: 'FAR': macro redefinition
-  c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(150): note: see previous definition of 'FAR'
-c:\git repos\dungeonmap\src\maindriver.cpp(162): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 4 has type 'void *'
-c:\git repos\dungeonmap\src\maindriver.cpp(162): warning C4313: 'printf': '%d' in format string conflicts with argument 4 of type 'void *'
-c:\git repos\dungeonmap\src\maindriver.cpp(410): error C2065: 'my_world': undeclared identifier
-c:\git repos\dungeonmap\src\maindriver.cpp(410): error C2228: left of '.total_elements' must have class/struct/union
-  c:\git repos\dungeonmap\src\maindriver.cpp(410): note: type is 'unknown-type'
-c:\git repos\dungeonmap\src\maindriver.cpp(410): error C2198: 'PFNGLBUFFERDATAPROC': too few arguments for call
-c:\git repos\dungeonmap\src\maindriver.cpp(422): error C2440: 'static_cast': cannot convert from 'unsigned __int64' to 'void *'
-  c:\git repos\dungeonmap\src\maindriver.cpp(422): note: Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
-c:\git repos\dungeonmap\src\maindriver.cpp(422): error C2198: 'PFNGLVERTEXATTRIBPOINTERPROC': too few arguments for call
-c:\git repos\dungeonmap\src\maindriver.cpp(427): error C2440: 'static_cast': cannot convert from 'unsigned __int64' to 'void *'
-  c:\git repos\dungeonmap\src\maindriver.cpp(427): note: Conversion from integral type to pointer type requires reinterpret_cast, C-style cast or function-style cast
-c:\git repos\dungeonmap\src\maindriver.cpp(427): error C2198: 'PFNGLVERTEXATTRIBPOINTERPROC': too few arguments for call
-c:\git repos\dungeonmap\src\maindriver.cpp(448): error C2065: 'self': undeclared identifier
-c:\git repos\dungeonmap\src\maindriver.cpp(448): error C2228: left of '.won' must have class/struct/union
-  c:\git repos\dungeonmap\src\maindriver.cpp(448): note: type is 'unknown-type'
-c:\git repos\dungeonmap\src\maindriver.cpp(459): error C2065: 'z_': undeclared identifier
-c:\git repos\dungeonmap\src\maindriver.cpp(460): error C2065: 'self': undeclared identifier
-c:\git repos\dungeonmap\src\maindriver.cpp(460): error C2228: left of '.stepForward' must have class/struct/union
-  c:\git repos\dungeonmap\src\maindriver.cpp(460): note: type is 'unknown-type'
-c:\git repos\dungeonmap\src\maindriver.cpp(460): error C2065: 'sprint': undeclared identifier
-c:\git repos\dungeonmap\src\maindriver.cpp(460): error C2065: 'z_': undeclared identifier
-c:\git repos\dungeonmap\src\maindriver.cpp(460): error C2065: 'last': undeclared identifier
-c:\git repos\dungeonmap\src\maindriver.cpp(462): error C2065: 'x_': undeclared identifier
-c:\git repos\dungeonmap\src\maindriver.cpp(463): error C2065: 'self': undeclared identifier
-c:\git repos\dungeonmap\src\maindriver.cpp(463): error C2228: left of '.stepRight' must have class/struct/union
-  c:\git repos\dungeonmap\src\maindriver.cpp(463): note: type is 'unknown-type'
-c:\git repos\dungeonmap\src\maindriver.cpp(463): error C2065: 'sprint': undeclared identifier
-c:\git repos\dungeonmap\src\maindriver.cpp(463): error C2065: 'x_': undeclared identifier
-c:\git repos\dungeonmap\src\maindriver.cpp(463): error C2065: 'last': undeclared identifier
-c:\git repos\dungeonmap\src\maindriver.cpp(465): error C2065: 'y_': undeclared identifier
-c:\git repos\dungeonmap\src\maindriver.cpp(466): error C2065: 'self': undeclared identifier
-c:\git repos\dungeonmap\src\maindriver.cpp(466): error C2228: left of '.stepUp' must have class/struct/union
-  c:\git repos\dungeonmap\src\maindriver.cpp(466): note: type is 'unknown-type'
-c:\git repos\dungeonmap\src\maindriver.cpp(466): error C2065: 'sprint': undeclared identifier
-c:\git repos\dungeonmap\src\maindriver.cpp(466): error C2065: 'y_': undeclared identifier
-c:\git repos\dungeonmap\src\maindriver.cpp(466): error C2065: 'last': undeclared identifier
-c:\git repos\dungeonmap\src\maindriver.cpp(475): error C2065: 'self': undeclared identifier
-c:\git repos\dungeonmap\src\maindriver.cpp(475): error C2228: left of '.getViewMatrix' must have class/struct/union
-  c:\git repos\dungeonmap\src\maindriver.cpp(475): note: type is 'unknown-type'
-c:\git repos\dungeonmap\src\maindriver.cpp(475): error C2065: 'sprint': undeclared identifier
-c:\git repos\dungeonmap\src\maindriver.cpp(479): error C2065: 'self': undeclared identifier
-c:\git repos\dungeonmap\src\maindriver.cpp(479): error C2228: left of '.point' must have class/struct/union
-  c:\git repos\dungeonmap\src\maindriver.cpp(479): note: type is 'unknown-type'
-c:\git repos\dungeonmap\src\maindriver.cpp(492): error C2065: 'my_world': undeclared identifier
-c:\git repos\dungeonmap\src\maindriver.cpp(492): error C2065: 'self': undeclared identifier
-c:\git repos\dungeonmap\src\maindriver.cpp(495): error C2065: 'last': undeclared identifier
-c:\git repos\dungeonmap\src\maindriver.cpp(497): error C2065: 'last': undeclared identifier
-c:\git repos\dungeonmap\src\maindriver.cpp(498): error C2065: 'count': undeclared identifier
-c:\git repos\dungeonmap\src\maindriver.cpp(499): error C2065: 'last': undeclared identifier
-c:\git repos\dungeonmap\src\maindriver.cpp(501): error C2065: 'count': undeclared identifier
+﻿  WorldManager.cpp
+  MainDriver.cpp
+c:\git repos\dungeonmap\src\maindriver.cpp(332): warning C4244: '=': conversion from 'Sint32' to 'float', possible loss of data
+c:\git repos\dungeonmap\src\maindriver.cpp(333): warning C4244: '=': conversion from 'Sint32' to 'float', possible loss of data
+c:\git repos\dungeonmap\src\maindriver.cpp(346): warning C4305: '+=': truncation from 'double' to 'float'
+  Camera.cpp
+  Object.cpp
+  Generating Code...
+  glad.c
+  DungeonMap.vcxproj -> C:\Git Repos\DungeonMap\x64\Debug\DungeonMap.exe
+  DungeonMap.vcxproj -> C:\Git Repos\DungeonMap\x64\Debug\DungeonMap.pdb (Partial PDB)
