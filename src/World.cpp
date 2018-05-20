@@ -61,16 +61,6 @@ World::World(char * file)
 		else if (line[0] == '1') { //Player | 1 x y z - Player
 			sscanf(line, "1 %d %d %d", &startx, &starty, &startz);
 		}
-		else if (line[0] == '2') { //Velocity | 2 x y z - Velocity
-			float x, y, z;
-			sscanf(line, "2 %f %f %f", &x, &y, &z);
-			velocityVec = glm::vec3(x, y, z);
-		}
-		else if (line[0] == '3') { //Gravity | 3 x y z - Gravity
-			float x, y, z;
-			sscanf(line, "3 %f %f %f", &x, &y, &z);
-			gravityVec = glm::vec3(x, y, z);
-		}
 		else if (line[0] == '4') { //New Bouncy Block | %4 x y z hx hy hz rx ry rz str- Bounce Block
 			if (block_count < MAX_BLOCKS) {
 				float x, y, z, hx, hy, hz, rx, ry, rz, str;

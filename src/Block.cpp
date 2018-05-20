@@ -229,9 +229,6 @@ glm::vec3 Block::verified(glm::vec4 new_pos, glm::vec4 new_pos_store, float r, g
 				vv->z -= str / hz;
 			}
 		}
-		if (feature_type == 3) {
-			printf("Congrats you won!!!!\n");
-		}
 		vv->x = vv->x * retention;
 		vv->y = vv->y * retention;
 		vv->z = vv->z * retention;

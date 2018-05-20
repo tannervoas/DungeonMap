@@ -31,8 +31,6 @@ struct World
 	int* numTris;
 	int total_elements;
 
-	glm::vec3 velocityVec;
-	glm::vec3 gravityVec;
 	//Methods
 	World(void); //Default constructor
 	World(char* file); //Reads map information from file

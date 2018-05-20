@@ -183,7 +183,6 @@ int main(int argc, char *argv[]){
 	SDL_Event windowEvent;
 	bool quit = false;
 	Player self = Player(my_world.startx, my_world.starty, my_world.startz, screen_width, screen_height, my_world);
-	self.setForces(my_world.velocityVec, my_world.gravityVec);
 	GLint uniEye = glGetUniformLocation(texturedShader, "eyePos");
 	glUniform3fv(uniEye, 1, glm::value_ptr(self.position));
 	int x_ = 0;
@@ -206,7 +205,7 @@ int main(int argc, char *argv[]){
 			if (windowEvent.type == SDL_QUIT) {
 				quit = true; //Exit event loop
 			}
-			if ((windowEvent.type == SDL_KEYUP && windowEvent.key.keysym.sym == SDLK_ESCAPE) || self.won) {
+			if (windowEvent.type == SDL_KEYUP && windowEvent.key.keysym.sym == SDLK_ESCAPE) {
 				quit = true; //Exit event loop
 			}
 			if (windowEvent.type == SDL_KEYUP && windowEvent.key.keysym.sym == SDLK_f) { //If "f" is pressed
@@ -262,22 +261,11 @@ int main(int argc, char *argv[]){
 			else if (windowEvent.type == SDL_KEYDOWN && windowEvent.key.keysym.sym == SDLK_k) { //Slow down movement
 				self.move_speed -= 5.f;
 			}
-			else if (windowEvent.type == SDL_KEYDOWN && windowEvent.key.keysym.sym == SDLK_SPACE) { //Jump!
-				self.Jump();
-			}
 			else if (windowEvent.type == SDL_KEYDOWN && windowEvent.key.keysym.sym == SDLK_LSHIFT) { //Sprint!
 				sprint = SPRINT_SPEED;
 			}
 			else if (windowEvent.type == SDL_KEYUP && windowEvent.key.keysym.sym == SDLK_LSHIFT) { //End sprint
 				sprint = 1;
-			}
-			else if (windowEvent.type == SDL_KEYDOWN && windowEvent.key.keysym.sym == SDLK_p) { //Developer Mode Toggle
-				if (self.active == 1) {
-					self.active = 0;
-				}
-				else {
-					self.active = 1;
-				}
 			}
 		}
 		poll = SDL_GetTicks() / 1000.f - poll;

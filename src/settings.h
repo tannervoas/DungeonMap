@@ -9,13 +9,11 @@
 
 #define FLIGHT 1 //Enables flight (Q and E key)
 #define SOLID 1 //Enables solid blocks. Without this we will fall through blocks
-#define MAX_JUMPS 1 //Deprecated
 #define MAX_THREADS 6 //No parralel. Deprecated, although could be added again.
 #define TEN_TIMES_NEAR 3 //Sets our near value (i.e 3 -> 0.3 new for our projection matrix)
 #define FAR 1000 //Our far vlue for projection
 #define TERMINAL_VELOCITY 100 //Speed limit of our player. Velocity cant pass this (if sprinting it can go SPRINT * This)
 #define SPRINT_SPEED 10.0f //Effect of movement and speed limit while sprinting.
-#define ALLOW_DEVELOPER 1 //If this is active pressing P allows you to enter developer mode and fly freely
 #define GLOBAL_TIME_STEP 0.01f //This isnt time based because of issues i was getting earlier. Thus each time we assume this much time passed. This should be fixed.
 #define MAX_BLOCKS 1000000 //Block limit. If you want more than this then increase this number.
 #define RADIUS 2.0f //Radius at which it draws our rolling ball with (RADIUS * TEN_TIMES_NEW / 10) is our actual radius we use.
