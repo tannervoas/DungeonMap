@@ -21,13 +21,19 @@
     <ClCompile Include="..\src\MainDriver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Camera.cpp">
+    <ClCompile Include="..\src\triplet.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\WorldManager.cpp">
+    <ClCompile Include="..\src\World.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\Object.cpp">
+    <ClCompile Include="..\src\bvh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Block.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -41,13 +47,19 @@
     <ClInclude Include="..\src\settings.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Camera.h">
+    <ClInclude Include="..\src\Block.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\WorldManager.h">
+    <ClInclude Include="..\src\bvh.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\Object.h">
+    <ClInclude Include="..\src\Player.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\triplet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\World.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

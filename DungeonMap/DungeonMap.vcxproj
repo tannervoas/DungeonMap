@@ -122,19 +122,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\Object.cpp" />
-    <ClCompile Include="..\src\Camera.cpp" />
+    <ClCompile Include="..\src\Block.cpp" />
+    <ClCompile Include="..\src\bvh.cpp" />
     <ClCompile Include="..\src\glad\glad.c" />
     <ClCompile Include="..\src\MainDriver.cpp" />
-    <ClCompile Include="..\src\WorldManager.cpp" />
+    <ClCompile Include="..\src\Player.cpp" />
+    <ClCompile Include="..\src\triplet.cpp" />
+    <ClCompile Include="..\src\World.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\src\Object.h" />
-    <ClInclude Include="..\src\Camera.h" />
+    <ClInclude Include="..\src\Block.h" />
+    <ClInclude Include="..\src\bvh.h" />
     <ClInclude Include="..\src\glad\glad.h" />
     <ClInclude Include="..\src\glad\khrplatform.h" />
+    <ClInclude Include="..\src\Player.h" />
     <ClInclude Include="..\src\settings.h" />
-    <ClInclude Include="..\src\WorldManager.h" />
+    <ClInclude Include="..\src\triplet.h" />
+    <ClInclude Include="..\src\World.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
